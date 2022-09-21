@@ -5,10 +5,11 @@ class String(str):
         self.entity = str(entity)
 
     def __add__(self, other):
-        return self.entity + str(other)
+        self.entity += str(other)
+        return String(self.entity)
 
     def __sub__(self, other):
-        return self.entity.replace(str(other), "", 1)
+        return String(self.entity.replace(str(other), "", 1))
 
 line = String("")
 print(line)
